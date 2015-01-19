@@ -10,8 +10,8 @@ Spark is required to run the tool. In the following example, I have uploaded the
 
   jar -cvf GenomeAnalysis.jar -C ./GenomeAnalysis/ .
 
-  /home/group5/spark-1.1.1-bin-hadoop1/bin/spark-submit --class "GenomeAnalysis" --master spark://group5node29:7077 ./GenomeAnalysis.jar hdfs://group5node29:54310/user/group5/project/input hdfs://group5node29:54310/user/group5/project/gene hdfs://group5node29:54310/user/group5/spark/output 4
-  (Usage: spark-submit --class YOUR_CLASS --master YOUR_CLUSTER_MASTER YOUR_JAR_FILE <input file> <gene file> <output file> <spark task number>)
+  /home/group5/spark-1.1.1-bin-hadoop1/bin/spark-submit --class "GenomeAnalysis" --master spark://group5node29:7077 ./GenomeAnalysis.jar hdfs://group5node29:54310/user/group5/project/input hdfs://group5node29:54310/user/group5/project/gene hdfs://group5node29:54310/user/group5/spark/output 16
+  (Usage: spark-submit --class YOUR_CLASS --master YOUR_CLUSTER_MASTER YOUR_JAR_FILE input_file gene_file output_file spark_task_number)
 
 1. Introduction:
 As the rapid development of sequencing technology in genome research, scientists are generating a large amount of data at an unprecedented rate through high throughput experiments. One kind of these experiments is HiC experiment, which is a derivative of Chromosome Conformation Capture [1]. The experiment captures one type of mysterious phenomena in cell, chromosomes binding to themselves or each other through proteins and forming functional interactions, which has a tremendous impact on long range gene expression regulation. Therefore an analysis tool used to understanding the data at gene level is required and important to the genome research.
