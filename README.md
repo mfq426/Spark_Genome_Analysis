@@ -5,8 +5,11 @@ How to compile and run at the directory containing all Java source code
 Spark is required to run the tool. In the following example, I have uploaded the two input files (gene and input) to a hdfs, which is welcome to change to meet your own environment. 
 
 mkdir GenomeAnalysis
+
 javac -classpath /home/group5/spark-1.1.1-bin-hadoop1/lib/spark-assembly-1.1.1-hadoop1.0.4.jar:/home/group5/scala-2.11.4/lib/scala-library.jar -d ./GenomeAnalysis/ *.java
+
 jar -cvf GenomeAnalysis.jar -C ./GenomeAnalysis/ .
+
 /home/group5/spark-1.1.1-bin-hadoop1/bin/spark-submit --class "GenomeAnalysis" --master spark://group5node29:7077 ./GenomeAnalysis.jar hdfs://group5node29:54310/user/group5/project/input hdfs://group5node29:54310/user/group5/project/gene hdfs://group5node29:54310/user/group5/spark/output4
 
 
